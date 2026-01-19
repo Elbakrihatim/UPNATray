@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<image name="pig">
+
+  <raster>
+    <W>500</W>
+    <H>500</H>
+    <backgroundColor>0.3 0.3 0.3</backgroundColor>
+  </raster>
+ 
+  <rayTracer>
+    <wblock>32</wblock>
+    <hblock>32</hblock>
+    <showProgress>true</showProgress>
+  </rayTracer>
+
+  <engine>
+    <illumination>false</illumination>
+  </engine>   
+  
+  <camera>
+    <position>1.0 1.25 1.750</position>
+<!--    <position>1.0 0.5 0.5</position>-->
+    <lookAt>-1.0 0.50 1.0</lookAt>    
+<!--    <position>0.25 1.15 -0.5</position>
+    <lookAt>-2.75 0.75 2.85</lookAt>-->
+<!--    <position>-2.0 2.5 1.25</position>
+    <lookAt>-2.0 0.0 1.25</lookAt>       -->
+    <up>0.0 1.0 0.0</up>
+  </camera>
+
+  <projection type="perspective">
+    <fov>45.0</fov>
+  </projection>
+
+  <models>
+    <model id="room" type="box">
+      <width>10.0</width>
+      <height>10.0</height>
+      <depth>10.0</depth>
+    </model>
+--> <model id="bola" type="sphere">
+      <radius>0.50</radius>
+    </model>
+    <model id ="pig" type="mesh">
+      <objFile>cmu/pig_triangulated.obj</objFile>
+    </model>    
+  </models>
+
+  <scene>
+    <object>
+      <modelId>room</modelId>
+      <translation>0.0 5.0 0.0</translation>
+      <color>0.9 0.9 0.9</color>
+    </object>
+    <object>
+      <modelId>bola</modelId>
+      <translation>-3.0 0.50 -0.750</translation>      
+      <color>0.0 0.9 0.0</color>
+    </object>
+    <object>
+      <modelId>pig</modelId>
+      <color>0.9 0.6 0.6</color>
+      <translation>0.0 0.0 3.0</translation>
+    </object>    
+  </scene>
+
+</image>

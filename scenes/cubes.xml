@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<image name="cubes">
+
+  <raster>
+    <W>800</W>
+    <H>800</H>
+    <backgroundColor>0.4 0.4 0.4</backgroundColor>
+  </raster>
+  
+  <rayTracer>
+    <wblock>32</wblock>
+    <hblock>32</hblock>
+    <showProgress>true</showProgress>
+  </rayTracer>
+  
+  <engine>
+    <illumination>false</illumination>
+  </engine>  
+ 
+  <camera>
+    <position>0.0 3.0 0.0</position>
+    <lookAt>0.0 3.0 -1.0</lookAt>
+    <up>0.0 1.0 0.0</up>
+  </camera>
+  
+<!--  Posición de cámara para imagen mediante proyección ortográfica-->
+<!--  <camera>
+    <position>0.0 5.0 0.0</position>
+    <lookAt>0.0 3.0 -2.0</lookAt>
+    <up>0.0 1.0 0.0</up>
+  </camera>  -->
+
+<!--  <projection type="orthographic">
+    <height>30.0</height>
+    <aspect>1</aspect>
+  </projection>  -->
+  
+<!--  <projection type="perspective">
+    <fov>60.0</fov>
+    <aspect>1</aspect>
+  </projection>-->
+  
+  <projection type="angular">
+    <fov>180.0</fov>
+  </projection>
+  
+<!--  <projection type="nlperspective">
+    <fov>180.0</fov>
+  </projection>  -->
+  
+  <models>
+      
+    <model id="floor" type="plane">
+      <point>0.0 -2.0 0.0</point>
+      <normal>0.0 1.0 0.0</normal>
+    </model>      
+    
+    <model id="box" type="box">
+      <width>4</width>
+      <height>4</height>
+      <depth>2</depth>
+    </model>    
+
+  </models>
+  
+  <scene>
+      
+<!--    Suelo-->
+    <object>
+      <modelId>floor</modelId>
+      <color>0.7 0.7 0.7</color>
+    </object>      
+    
+<!--    Caja derecha 1-->
+    <object>
+      <modelId>box</modelId>
+      <color>1.00 0.71 0.29</color>
+      <translation>5.0 2.5 -1.0</translation>
+    </object>
+
+<!--    Caja izquierda 1-->
+    <object>
+      <modelId>box</modelId>
+      <color>1.00 0.71 0.29</color>
+      <translation>-5.0 2.5 -1.0</translation>
+    </object>    
+    
+<!--    Caja derecha 2-->
+    <object>
+      <modelId>box</modelId>
+      <color>1.00 0.71 0.29</color>
+      <translation>5.0 2.5 -5.0</translation>
+    </object>  
+
+<!--    Caja izquierda 2-->
+    <object>
+      <modelId>box</modelId>
+      <color>1.00 0.71 0.29</color>
+      <translation>-5.0 2.5 -5.0</translation>
+    </object>  
+    
+<!--    Caja derecha 3-->
+    <object>
+      <modelId>box</modelId>
+      <color>1.00 0.71 0.29</color>
+      <translation>5.0 2.5 -9.0</translation>
+    </object>  
+
+<!--    Caja izquierda 3-->
+    <object>
+      <modelId>box</modelId>
+      <color>1.00 0.71 0.29</color>
+      <translation>-5.0 2.5 -9.0</translation>
+    </object>        
+                
+<!--    Caja derecha 4-->
+    <object>
+      <modelId>box</modelId>
+      <color>1.00 0.71 0.29</color>
+      <translation>5.0 2.5 -13.0</translation>
+    </object>  
+
+<!--    Caja izquierda 4-->
+    <object>
+      <modelId>box</modelId>
+      <color>1.00 0.71 0.29</color>
+      <translation>-5.0 2.5 -13.0</translation>
+    </object>
+  </scene>  
+  
+</image>

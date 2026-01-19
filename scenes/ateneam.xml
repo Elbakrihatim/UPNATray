@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<image name="ateneam">
+
+  <raster>
+    <W>543</W>
+    <H>543</H>
+    <backgroundColor>0.3 0.3 0.3</backgroundColor>
+  </raster>
+
+  <rayTracer>
+    <wblock>32</wblock>
+    <hblock>32</hblock>
+    <showProgress>true</showProgress>
+  </rayTracer>
+
+  <engine>
+    <illumination>false</illumination>
+  </engine>
+
+  <camera>
+    <position>2000.0 +1500.0 -2100.0</position>
+    <lookAt>0.0 1000.0 0.0</lookAt>
+    <up>0.0 1.0 0.0</up>
+  </camera>
+
+  <projection type="perspective">
+    <fov>65.0</fov>
+  </projection>
+
+<!--  <projection type="angular">
+    <fov>65.0</fov>
+  </projection>-->
+
+  <models>
+
+    <model id="ateneam" type="mesh">
+<!--      <flat>true</flat>-->
+      <promediatedNormals>false</promediatedNormals>
+      <objFile>greek/ateneam.obj</objFile>
+    </model>
+  </models>
+
+  <scene>
+    <object>
+      <color>0.72 0.35 0.15</color>
+      <modelId>ateneam</modelId>
+<!--      <iVector>1.0 -1.0 0.0</iVector>
+      <jauxVector>0.0 1.0 0.0</jauxVector>      -->
+<!--      <rotationAxis>0.0 1.0 0.0</rotationAxis>
+      <rotationAngle>35.0</rotationAngle>      -->
+    </object>
+  </scene>
+
+</image>

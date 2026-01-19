@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<image name="ellipsoid0">
+
+  <raster>
+    <W>543</W>
+    <H>543</H>
+    <backgroundColor>0.3 0.3 0.3</backgroundColor>
+  </raster>
+  
+  <rayTracer>
+    <wblock>32</wblock>
+    <hblock>32</hblock>
+    <showProgress>true</showProgress>
+  </rayTracer>  
+  
+  <engine>
+    <illumination>false</illumination>
+  </engine>   
+  
+<!--  Cámara fuera del objeto-->
+<!--  <camera>
+    <position>-5.5 2.75 5.5</position>
+    <lookAt>0.0 2.5 0.0</lookAt>
+    <up>0.0 1.0 0.0</up>
+  </camera>
+  -->
+<!--  Cámara dentro del objeto-->
+<!--  <camera>
+    <position>0 2 0</position>
+    <lookAt>0.0 0 1.0</lookAt>
+    <up>0.0 1.0 0.0</up>
+  </camera>-->
+  
+  <projection type="perspective">
+    <fov>50.0</fov>
+    <aspect>1</aspect>
+  </projection> 
+
+  <models>
+    <model id="floor" type="plane">
+      <point>0.0 -2.0 0.0</point>
+      <normal>0.0 1.0 0.0</normal>   
+    </model>
+    
+    <model id="zeppelin" type="ellipsoid">
+      <a>2.25</a>
+      <b>2.75</b>
+      <c>1.25</c>
+    </model>    
+  </models>
+
+  <scene>
+      
+    <object>
+      <modelId>floor</modelId>
+      <color>0.6 0.6 0.6</color>
+    </object>      
+    
+    <object>
+      <modelId>zeppelin</modelId>
+      <color>0.70 0.15 0.0</color>
+      <translation>0.0 2.5 0 .0</translation>
+      <iVector>-2.5 0.0 +1.0</iVector>
+      <kauxVector>0.0 1.0 1.0</kauxVector>
+    </object>
+    
+  </scene>
+</image>

@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<image name="box0">
+
+  <raster>
+    <W>512</W>
+    <H>512</H>
+    <backgroundColor>0.2 0.2 0.2</backgroundColor>
+  </raster>
+  
+  <rayTracer>
+    <wblock>32</wblock>
+    <hblock>32</hblock>
+    <showProgress>false</showProgress>
+  </rayTracer>    
+  
+  <engine>
+    <illumination>false</illumination>
+  </engine>
+  
+<!--  Cámara en exterior-->
+  <camera>
+    <position>5.0 3.75 5.0</position>
+    <lookAt>0.0 1.5 0.0</lookAt>
+    <up>0.0 1.0 0.0</up>
+  </camera>  
+  
+<!--  Cámara en interior-->
+<!--  <camera>
+    <position>0 0 0</position>
+    <lookAt>1.0 1.0 1.0</lookAt>
+    <up>0.0 1.0 0.0</up>
+  </camera>-->
+  
+<!--  <projection type="angular">
+    <fov>160.0</fov>
+  </projection>-->
+
+  <projection type="perspective">
+    <fov>80.0</fov>
+    <aspect>1</aspect>
+  </projection>
+  
+  <models>
+    <model id="floor" type="plane">
+      <point>0.0 -3.0 0.0</point>
+      <normal>0.0 1.0 0.0</normal>
+    </model>      
+    
+    <model id="box1" type="box">
+      <width>4.5</width>
+      <height>4.5</height>
+      <depth>4.5</depth>
+    </model>   
+    
+    <model id="box2" type="box">
+      <width>1.5</width>
+      <height>1.5</height>
+      <depth>1.5</depth>
+    </model>         
+  </models>    
+
+  <scene>
+    <object>
+      <modelId>floor</modelId>
+      <color>0.15 0.2 0.6</color>
+    </object>      
+    
+    <object>
+      <modelId>box1</modelId>
+      <color>1.0 0.6 0.1</color>
+      <translation>0.0 0.0 0.0</translation>
+<!--      <iVector>+1.0 0.0 0.0</iVector>
+      <jauxVector>0.0 +1.0 0.0</jauxVector>      -->
+      <rotationAxis>1.0 1.0 0.0</rotationAxis>
+      <rotationAngle>30.0</rotationAngle>
+    </object>   
+    
+    <object>
+      <modelId>box2</modelId>
+      <color>0.5 0.6 0.1</color>
+      <translation>0.0 5.5 0.0</translation>      
+<!--      <iVector>+1.0 +1.0 0.0</iVector>
+      <jauxVector>-1.25 +1.0 -1.0</jauxVector>      -->
+    </object>         
+  </scene>
+  
+</image>

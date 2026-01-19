@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<image name="blub">
+
+  <raster>
+    <W>400</W>
+    <H>400</H>
+    <backgroundColor>0.85 0.85 0.85</backgroundColor>
+  </raster>
+  
+  <rayTracer>
+    <wblock>32</wblock>
+    <hblock>32</hblock>
+    <showProgress>true</showProgress>
+  </rayTracer>
+  
+  <engine>
+    <illumination>false</illumination>
+  </engine>    
+
+<!--  <camera>
+    <position>-3.5 +1.50 -3.5</position>
+    <lookAt>0.0 0.0 0.0</lookAt>
+    <up>0.0 1.0 0.0</up>
+  </camera>-->
+
+  <camera>
+    <position>-2.25 0.95 +2.25</position>
+    <lookAt>-0.25 0.25 0.25</lookAt>
+    <up>0.0 1.0 0.0</up>
+  </camera>
+
+  <projection type="perspective">
+    <fov>42.5</fov>
+    <aspect>1.0</aspect>
+  </projection>
+  
+  <models>
+    <model id="floor" type="plane">
+      <normal>0.0 1.0 0.0</normal>
+      <point>0.0 -1.5 0.0</point>
+    </model>
+    
+    <model id="blub" type="mesh">
+      <objFile>cmu/blub_quadrangulated.obj</objFile>
+<!--      <objFile>cmu/blub_triangulated.obj</objFile>-->
+      <flat>false</flat>
+<!--      <promediatedNormals>true</promediatedNormals>-->
+    </model>
+  </models>
+    
+  <scene>
+    <object>
+      <modelId>floor</modelId>
+      <color>0.90 0.90 0.90</color>
+    </object>
+    <object>
+      <modelId>blub</modelId>
+      <color>0.8 0.8 0.95</color>
+    </object>
+  </scene>
+  
+</image>

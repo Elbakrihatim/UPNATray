@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<image name="nefertiti">
+
+  <raster>
+    <W>1000</W>
+    <H>1000</H>
+    <backgroundColor>0.45 0.45 0.45</backgroundColor>
+  </raster>
+  
+  <rayTracer>
+    <wblock>32</wblock>
+    <hblock>32</hblock>
+    <showProgress>true</showProgress>
+  </rayTracer>  
+  
+  <engine>
+    <illumination>false</illumination>
+  </engine>
+
+  <camera>
+    <position>0.0 0.0 600.0</position>
+    <lookAt>0.0 0.0 0.0</lookAt>
+<!--    <position>0.0 0.0 0.0</position> 
+    <lookAt>0.0 0.0 1.0</lookAt>-->
+    <up>0.0 1.0 0.0</up>
+  </camera>
+
+  <projection type="perspective">
+<!--    <fov>0.25</fov>-->
+    <fov>45</fov>
+  </projection>
+
+<!--  <projection type="angular">
+    <fov>70.00</fov>
+  </projection>-->
+  
+<!--  <projection type="orthographic">
+    <height>580.0</height>
+    <aspect>1.0</aspect>    
+  </projection>-->
+
+  <models>
+    <model id="nefertiti" type="mesh">
+      <objFile>cmu/nefertiti.obj</objFile>
+      <flat>true</flat>
+    </model>      
+  </models>
+
+  <scene>
+
+    <object>
+      <color>0.90 0.90 0.90</color>
+      <modelId>nefertiti</modelId>
+<!--      <rotationAxis>1.0 1.0 1.0</rotationAxis>
+      <rotationAngle>45.0</rotationAngle>
+      <scaleFactors>1.0 1.0 1.0</scaleFactors>
+      <translation>50.0 0.0 0.0</translation>-->
+    </object>
+  </scene>
+    
+</image>

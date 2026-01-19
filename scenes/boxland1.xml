@@ -1,0 +1,179 @@
+<?xml version="1.0"?>
+<image name="boxland1">
+
+  <raster>
+    <W>500</W>
+    <H>500</H>
+    <backgroundColor>0.3 0.3 0.3</backgroundColor>
+  </raster>
+
+  <rayTracer>
+    <wblock>32</wblock>
+    <hblock>32</hblock>
+    <showProgress>true</showProgress>
+  </rayTracer>
+
+  <engine>
+    <illumination>true</illumination>
+    <recursionDepth>5</recursionDepth>
+  </engine>
+
+  <camera>
+    <position>4.50 5.0 18.0</position>
+    <lookAt>0.0 5.0 0.0</lookAt>
+    <up>0.0 1.0 0.0</up>
+  </camera>
+
+<!--  <projection type="angular">
+    <fov>135.0</fov>
+  </projection>-->
+
+  <projection type="perspective">
+    <fov>75.0</fov>
+  </projection>
+  
+ <lights>
+     <light type="omnidirectional">
+      <position>4.0 +30.0 4.0</position>
+      <spectrum>0.33 0.34 0.33</spectrum>
+      <power>2500</power>
+    </light>
+<!--     <light type="omnidirectional">
+      <position>+3.0 20.0 8.0</position>
+      <spectrum>0.33 0.34 0.33</spectrum>
+      <power>5000</power>
+    </light>-->
+<!--   <light type="spot">
+      <position>+0.0 +29.5 +0.0</position>
+      <lookAt>0.0 +30.0 0.0</lookAt>
+      <aperture>60</aperture>
+      <spectrum>0.34 0.33 0.33</spectrum>
+      <power>5000</power>
+    </light>-->
+<!--     <light type="directional">
+      <position>+20.0 +20.0 +20.0</position>
+      <lookAt>0.0 +2.0 +10.0</lookAt>
+      <radius>50</radius>
+      <attenuationExponent>0.0</attenuationExponent>
+      <spectrum>0.34 0.33 0.33</spectrum>
+      <power>7500</power>
+    </light>    -->
+  </lights>
+
+  <materials>
+    <btdf id="ideal-dielectric" type="Ideal-Dielectric">
+      <dielectricReflectance>1.0 1.0 1.0</dielectricReflectance>
+      <eta_int>1.05</eta_int>
+    </btdf>
+    <brdf id="ideal-conductor" type="Ideal-Conductor">
+      <conductiveReflectance>1.0 1.0 1.0</conductiveReflectance>
+    </brdf>    
+    <brdf id="white" type="Phong-Lafortune">
+      <diffuseReflectance>0.95 0.95 0.95</diffuseReflectance>
+      <conductiveReflectance>0.0 0.0 0.0</conductiveReflectance>
+      <ndf>Blinn</ndf>
+      <beta>20.0</beta>
+    </brdf>
+    <brdf id="ground" type="Phong-Lafortune">
+      <diffuseReflectance>0.5 0.5 0.30</diffuseReflectance>
+      <conductiveReflectance>0.05 0.05 0.05</conductiveReflectance>
+      <ndf>GGX</ndf>
+      <beta>75</beta>
+    </brdf>   
+    <btdf id="glass" type="Ideal-Dielectric">
+      <dielectricReflectance>1.0 1.0 1.0</dielectricReflectance>
+      <eta_int>1.25</eta_int>
+      <ndf>GGX</ndf>
+      <beta>5.0</beta>
+    </btdf>  
+    <brdf id="green" type="Phong-Lafortune">
+      <diffuseReflectance>0.10 0.05 0.10</diffuseReflectance>
+      <conductiveReflectance>0.10 0.85 0.0</conductiveReflectance>
+      <ndf>GGX</ndf>
+      <beta>45.0</beta>
+    </brdf> 
+    <brdf id="red" type="Phong-Lafortune">
+      <diffuseReflectance>0.20 0.025 0.025</diffuseReflectance>
+      <conductiveReflectance>0.70 0.025 0.025</conductiveReflectance>
+      <ndf>GGX</ndf>
+      <beta>90.0</beta>
+    </brdf>
+    <brdf id="blue" type="Phong-Lafortune">
+      <diffuseReflectance>0.0 0.0 0.10</diffuseReflectance>
+      <conductiveReflectance>0.0125 0.0125 0.50</conductiveReflectance>
+      <ndf>GGX</ndf>
+      <beta>60.0</beta>
+    </brdf>    
+  </materials>
+  
+
+  <models>
+    <model id="room" type="box">
+      <width>50.0</width>
+      <height>40.0</height>
+      <depth>50.0</depth>
+    </model>
+    <model id="box0" type="box">
+      <width>100.0</width>
+      <height>50.0</height>
+      <depth>10.0</depth>
+    </model>    
+    <model id="box1" type="box">
+      <width>7.0</width>
+      <height>9.0</height>
+      <depth>7.0</depth>
+    </model>
+    <model id="box2" type="box">
+      <width>8.0</width>
+      <height>10.0</height>
+      <depth>8.0</depth>
+    </model>
+    <model id="bola" type="sphere">
+      <radius>3.99</radius>
+    </model>
+    <model id="torus" type="torus">
+      <rotationalRadius>3.0</rotationalRadius>
+      <circunferenceRadius>1.0</circunferenceRadius>
+    </model>    
+  </models>
+
+  <scene>
+    <object>    
+      <modelId>room</modelId>
+      <translation>0.0 20.0 0.0</translation>
+      <materialId>ground</materialId>
+    </object>
+    <object>
+      <modelId>box1</modelId>
+      <translation>+9.0 +4.5 -4.0</translation>
+      <iVector>1.0 0.0 -2.0</iVector>
+      <jauxVector>0.0 1.0 0.0</jauxVector>
+<!--      <rotationAxis>0.0 1.0 0.0</rotationAxis>
+      <rotationAngle>-50.0</rotationAngle>      
+      <color>0.0125 0.0125 0.50</color>-->
+      <materialId>blue</materialId>
+    </object>
+    <object>
+      <modelId>box2</modelId>
+      <translation>-8.0 +5.0 +2.0</translation>
+<!--      <jVector>+0.35 1.0 0.0</jVector>
+      <iauxVector>1.0 0.0 0.0</iauxVector>      -->
+<!--      <iVector>+0.35 0.0 -1.0</iVector>
+      <jauxVector>0.0 1.0 0.0</jauxVector>
+      <scaleFactors>1.0 1.0 1.0</scaleFactors>
+-->      <rotationAxis>0.0 1.0 0.0</rotationAxis>
+      <rotationAngle>-20.0</rotationAngle><!--
+      <color>0.950 0.10 0.10</color>-->
+      <materialId>red</materialId>
+    </object>
+    <object>
+      <modelId>bola</modelId>
+      <translation>+3.0 4.0 8.0</translation>
+      <rotationAxis>1.0 .0 0.0</rotationAxis>
+      <rotationAngle>90.0</rotationAngle>      
+<!--      <color>0.20 0.90 0.30</color>-->
+      <materialId>green</materialId>
+    </object>
+  </scene>
+
+</image>

@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<image name="scene0">
+
+  <raster>
+    <W>500</W>
+    <H>500</H>
+    <backgroundColor>0.3 0.3 0.3</backgroundColor>
+  </raster>
+  
+  <rayTracer>
+    <wblock>32</wblock>
+    <hblock>32</hblock>
+    <showProgress>true</showProgress>
+  </rayTracer>
+
+  <engine>
+    <illumination>false</illumination>
+  </engine>  
+
+  <camera>
+    <position>20.0 20.0 20.0</position>
+    <lookAt>0.0 0.0 0.0</lookAt>
+    <up>0.0 1.0 0.0</up>
+  </camera>
+
+  <projection type="orthographic">
+    <height>35.0</height>
+    <aspect>1.0</aspect>    
+  </projection>
+
+  <models>
+    <model id="central" type="sphere">
+      <radius>7.5</radius>
+    </model>
+
+    <model id="+++" type="sphere">
+      <radius>5.0</radius>
+    </model>
+
+    <model id="-++" type="sphere">
+      <radius>5.0</radius>
+    </model>
+
+    <model id="--+" type="sphere">
+      <radius>5.0</radius>
+    </model>
+
+    <model id="+-+" type="sphere">
+      <radius>5.0</radius>
+    </model>
+
+    <model id="++-" type="sphere">
+      <radius>5.0</radius>
+    </model>
+
+    <model id="-+-" type="sphere">
+      <radius>5.0</radius>
+    </model>
+
+    <model id="---" type="sphere">
+      <radius>5.0</radius>
+    </model>
+
+    <model id="+--" type="sphere">
+      <radius>5.0</radius>
+    </model>
+  </models>
+  
+   <scene>
+    <object>
+      <modelId>central</modelId>
+      <translation>0.0 0.0 0.0</translation>      
+      <color>200 125 200</color>
+    </object>
+
+    <object>
+      <modelId>+++</modelId>
+      <translation>+5.0 +5.0 +5.0</translation>      
+      <color>255 0 0</color>
+    </object>
+
+    <object>
+      <modelId>-++</modelId>
+      <translation>-5.0 +5.0 +5.0</translation>      
+      <color>0 255 0</color>
+    </object>
+
+    <object>
+      <modelId>--+</modelId>
+      <translation>-5.0 -5.0 +5.0</translation>      
+      <color>0 0 255</color>
+    </object>
+
+    <object>
+      <modelId>+-+</modelId>
+      <translation>+5.0 -5.0 +5.0</translation>      
+      <color>0 255 255</color>
+    </object>
+
+    <object>
+      <modelId>++-</modelId>
+      <translation>+5.0 +5.0 -5.0</translation>      
+      <color>155 0 0</color>
+    </object>
+
+    <object>
+      <modelId>-+-</modelId>
+      <translation>-5.0 +5.0 -5.0</translation>      
+      <color>0 155 0</color>
+    </object>
+
+    <object>
+      <modelId>---</modelId>
+      <translation>-5.0 -5.0 -5.0</translation>      
+      <color>0 0 155</color>
+    </object>
+
+    <object>
+      <modelId>+--</modelId>
+      <translation>+5.0 -5.0 -5.0</translation>      
+      <color>0 155 155</color>
+    </object>
+  </scene> 
+
+</image>

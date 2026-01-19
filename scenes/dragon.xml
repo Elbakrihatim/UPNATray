@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<image name="dragon (stanford)">
+
+  <raster>
+    <W>500</W>
+    <H>500</H>
+    <backgroundColor>0.3 0.3 0.3</backgroundColor>
+  </raster>
+
+  <rayTracer>
+    <wblock>32</wblock>
+    <hblock>32</hblock>
+    <showProgress>true</showProgress>
+  </rayTracer>
+
+  <engine>
+    <illumination>false</illumination>
+  </engine>
+  
+  <camera>
+    <position>-5.0 +7.5 +10.0</position>
+    <lookAt>-1.0 5.0 0.0</lookAt>
+    <up>0.0 1.0 0.0</up>
+  </camera>
+  
+<!--  Cámara en interior de dragón-->
+<!--  <camera>
+    <position>-3.0 7.0 0.0</position>
+    <lookAt>-1.0 0.0 0.0</lookAt>
+    <up>0.0 1.0 0.0</up>
+  </camera>    -->
+
+  <projection type="perspective">
+    <fov>75.0</fov>
+  </projection>
+  
+  <models>
+    <model id="floor" type="plane">
+      <normal>0.0 1.0 0.0</normal>
+      <point>0.0 -0.9 0.0</point>
+    </model>
+    <model id="dragon" type="mesh">
+      <objFile>stanford/dragon.obj</objFile>
+    </model>
+  </models>  
+    
+  <scene>
+    <object>
+      <modelId>floor</modelId>
+      <color>0.96 0.90 0.827</color>
+    </object>
+    <object>
+      <modelId>dragon</modelId>
+      <color>1.00 0.71 0.29</color>
+    </object>
+  </scene>
+  
+</image>

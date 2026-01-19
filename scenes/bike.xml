@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<image name="bike">
+
+  <raster>
+    <W>900</W>
+    <H>900</H>
+    <backgroundColor>0.85 0.85 0.85</backgroundColor>
+  </raster>
+  
+  <rayTracer>
+    <wblock>32</wblock>
+    <hblock>32</hblock>
+    <showProgress>true</showProgress>
+  </rayTracer>
+  
+  <engine>
+    <illumination>false</illumination>
+  </engine>
+
+  <camera>
+    <position>-1.8 1.0 -2.0</position>
+   <!-- <position>-0.4275 1.0 -2.0</position> -->
+    <lookAt>0.0 0.0 -0.5</lookAt>
+    <up>0.0 1.0 0.0</up>
+  </camera>
+
+  <projection type="perspective">
+    <fov>4.5</fov>
+    <aspect>1.0</aspect>
+  </projection>
+
+ <!--https://www.cgtrader.com/free-3d-models/vehicle/bicycle/stark-temper-cross-country-mountain-bike-->
+ 
+  <models>
+    <model id ="bike" type="mesh">
+      <objFile>tarea.cuadrangulos/bike.obj.zip</objFile>
+      <promediatedNormals>true</promediatedNormals>
+    </model>     
+  </models>
+
+  <scene>
+    <object>
+      <color>0.8 0.8 0.8</color>
+      <modelId>bike</modelId>
+    </object>
+  </scene>
+  
+</image>

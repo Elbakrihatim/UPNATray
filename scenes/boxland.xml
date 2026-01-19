@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<image name="boxland">
+
+  <raster>
+    <W>500</W>
+    <H>500</H>
+    <backgroundColor>0.3 0.3 0.3</backgroundColor>
+  </raster>
+  
+  <rayTracer>
+    <wblock>32</wblock>
+    <hblock>32</hblock>
+    <showProgress>true</showProgress>
+  </rayTracer>
+
+  <engine>
+    <illumination>false</illumination>
+<!--    <falseLighting>false</falseLighting>-->
+  </engine>
+
+<!--  <camera>
+    <position>+3.0 6.0 -10.0</position>
+    <lookAt>+3.0 0.0 8.0</lookAt>
+    <up>0.0 1.0 0.0</up>
+  </camera>-->
+
+  <camera>
+    <position>4.50 10.0 18.0</position>
+    <lookAt>0.0 5.0 0.0</lookAt>
+    <up>0.0 1.0 0.0</up>
+  </camera>
+
+<!--  <projection type="angular">
+    <fov>90.0</fov>
+  </projection>-->
+
+  <projection type="perspective">
+    <fov>75.0</fov>
+    <aspect>1.0</aspect>
+  </projection>
+
+  <models>
+    <model id="suelo" type="plane">
+      <normal>0.0 1.0 0.0</normal>
+      <point>0.0 0.0 0.0</point>
+    </model>
+    <model id="techo" type="plane">
+      <normal>0.0 1.0 0.0</normal>
+      <point>0.0 +30.0 0.0</point>
+    </model>
+    <model id="derecho" type="plane">
+      <normal>1.0 0.0 0.0</normal>
+      <point>+25.0 0.0 0.0</point>
+    </model>
+    <model id="izquierdo" type="plane">
+      <normal>1.0 0.0 0.0</normal>
+      <point>-25.0 0.0 0.0</point>
+    </model>
+    <model id="fondo" type="plane">
+      <normal>0.0 0.0 1.0</normal>
+      <point>0.0 0.0 -25.0</point>
+    </model>
+    <model id="frente" type="plane">
+      <normal>0.0 0.0 1.0</normal>
+      <point>0.0 0.0 +25.0</point>
+    </model>
+    <model id="box1" type="box">
+      <width>9.0</width>
+      <height>9.0</height>
+      <depth>9.0</depth>
+    </model>
+    <model id="box2" type="box">
+      <width>8.0</width>
+      <height>10.0</height>
+      <depth>8.0</depth>
+    </model>
+    <model id="bola" type="sphere">
+      <radius>4.0</radius>
+    </model> 
+  </models>
+
+  <scene>
+    <object>
+      <modelId>suelo</modelId>
+      <color>0.91 0.95 0.62</color>
+    </object>
+    <object>
+      <modelId>techo</modelId>
+      <color>0.85 0.85 0.85</color>
+    </object>
+    <object>
+      <modelId>derecho</modelId>
+      <color>0.85 0.85 0.85</color>
+    </object>
+    <object>
+      <modelId>izquierdo</modelId>
+      <color>0.85 0.85 0.85</color>
+    </object>
+    <object>
+      <modelId>fondo</modelId>
+      <color>0.85 0.85 0.85</color>
+    </object>
+    <object>
+      <modelId>frente</modelId>
+      <color>0.85 0.85 0.85</color>
+    </object>
+    <!--desde aqui-->
+    <object>
+      <modelId>box1</modelId>
+      <translation>+9.0 +4.5 -4.0</translation>
+<!--      <iVector>1.0 0.0 -2.0</iVector>
+      <jauxVector>.0 1.0 0.0</jauxVector>          -->
+      <color>0.0125 0.0125 0.50</color>
+    </object>
+    <object>
+      <modelId>box2</modelId>
+      <color>0.950 0.10 0.10</color>
+      <translation>-8.0 +5.0 +2.0</translation>
+<!--      <iVector>+0.35 0.0 -1.0</iVector>
+      <jauxVector>0.0 1.0 0.0</jauxVector>      -->
+<!--      <scaleFactors>1.0 1.2 1.0</scaleFactors>
+      <rotationAxis>1.0 0.5 1.0</rotationAxis>
+      <rotationAngle>-15.0</rotationAngle>-->
+    </object>
+    <object>
+      <modelId>bola</modelId>
+      <color>0.20 0.90 0.30</color>
+      <translation>3.0 4.0 8.0</translation>
+    </object>
+    <!--hasta aqui-->
+  </scene>
+
+</image>

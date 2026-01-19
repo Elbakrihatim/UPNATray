@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<image name="torus0">
+
+  <raster>
+    <W>600</W>
+    <H>600</H>
+    <backgroundColor>0.85 0.85 0.85</backgroundColor>
+  </raster>
+  
+  <rayTracer>
+    <wblock>32</wblock>
+    <hblock>32</hblock>
+    <showProgress>true</showProgress>
+  </rayTracer>   
+ 
+  <engine>
+    <illumination>false</illumination>
+  </engine>     
+
+<!--  Cámara en el exterior del toro-->
+  <camera>
+    <position>10.0 20.0 -10.0</position>
+    <lookAt>0.0 0.0 0.0</lookAt>
+    <up>0.0 1.0 0.0</up>
+  </camera>
+  
+<!--  Cámara en el interior del toro-->
+<!--  <camera>
+    <position>0.0 0 5.0</position>
+    <lookAt>1.0 0.0 1.0</lookAt>
+    <up>0.0 1.0 0.0</up>
+  </camera> -->
+
+  <projection type="perspective">
+    <fov>50.0</fov>
+    <aspect>1</aspect>
+  </projection>
+
+  <models>
+    <model id="torus" type="torus">
+      <rotationalRadius>5.0</rotationalRadius>
+      <circunferenceRadius>3.5</circunferenceRadius>
+    </model>    
+  </models>  
+
+  <scene>
+    
+    <object>
+      <modelId>torus</modelId>
+      <translation>-0.5 1.0 0.5</translation>
+<!--      <iVector>2.0 1.0 0.0</iVector>
+      <jauxVector>0.0 1.0 2.0</jauxVector>-->
+      <color>0.50 0.20 0.40</color>
+    </object>    
+
+  </scene>
+  
+</image>

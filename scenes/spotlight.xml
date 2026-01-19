@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<image name="spots">
+
+  <raster>
+    <W>500</W>
+    <H>500</H>
+    <backgroundColor>0.85 0.85 0.85</backgroundColor>
+  </raster>
+
+  <rayTracer>
+    <wblock>32</wblock>
+    <hblock>32</hblock>
+    <showProgress>true</showProgress>
+  </rayTracer>
+
+  <engine>
+    <illumination>true</illumination>
+    <recursionDepth>5</recursionDepth>
+  </engine>
+
+<!--  Punto de vista 1-->
+<!--  <camera>
+    <position>25.0 20.0 25.0</position>
+    <lookAt>0.0 10.0 0.0</lookAt>
+    <up>0.0 1.0 0.0</up>
+  </camera>
+ -->
+<!--  Punto de vista 2-->   
+  <camera>
+    <position>-25.0 10.0 25.0</position>
+    <lookAt>0.0 10.0 0.0</lookAt>
+    <up>0.0 1.0 0.0</up>
+  </camera>  
+
+  <projection type="perspective">
+    <fov>60.0</fov>
+  </projection>
+  
+ <lights>
+    <light type="spot">
+      <position>+60.0 +30 +60.0</position>
+      <lookAt>+1.0 0.0 +1.0</lookAt>
+      <aperture>25</aperture>
+      <spectrum>0.34 0.33 0.33</spectrum>
+      <power>2000</power>
+    </light>
+  </lights>
+
+  <materials>
+    <brdf id="white" type="Phong-Lafortune">
+      <diffuseReflectance>0.90 0.90 0.90</diffuseReflectance>
+      <conductiveReflectance>0.05 0.05 0.05</conductiveReflectance>
+      <ndf>GGX</ndf>
+      <beta>20.0</beta>
+    </brdf>   
+    <brdf id="green" type="Phong-Lafortune">
+      <diffuseReflectance>0.10 0.50 0.10</diffuseReflectance>
+      <conductiveReflectance>0.10 0.50 0.0</conductiveReflectance>
+      <ndf>GGX</ndf>
+      <beta>75.0</beta>
+    </brdf>
+    <brdf id="red" type="Phong-Lafortune">
+      <diffuseReflectance>0.85 0.10 0.10</diffuseReflectance>
+      <conductiveReflectance>0.10 0.05 0.05</conductiveReflectance>
+      <ndf>GGX</ndf>
+      <beta>45.0</beta>
+    </brdf>   
+  </materials>
+  
+  <models>
+    <model id="ground" type="plane">
+      <normal>0.0 1.0 0.0</normal>
+      <point>0.0 0.0 0.0</point>
+    </model>
+    <model id="wall" type="plane">
+      <normal>1.0 0.0 1.0</normal>
+      <point>-100.0 0.0 -100.0</point>
+    </model>    
+    <model id="wall1" type="plane">
+      <normal>1.0 0.0 0.0</normal>
+      <point>-150.0 0.0 0.0</point>
+    </model>
+    <model id="wall2" type="plane">
+      <normal>0.0 0.0 1.0</normal>
+      <point>0.0 0.0 -150.0</point>
+    </model>
+    <model id="box" type="box">
+      <width>10.0</width>
+      <height>10.0</height>
+      <depth>10.0</depth>
+    </model>   
+    <model id="ball" type="sphere">
+      <radius>5.0</radius>
+    </model>
+  </models>
+
+  <scene>
+    <object>
+      <modelId>ground</modelId>
+      <materialId>white</materialId>
+    </object>
+    <object>
+      <modelId>wall</modelId>
+      <materialId>white</materialId>
+    </object>
+    <object>
+      <modelId>wall2</modelId>
+      <materialId>white</materialId>
+    </object>        
+    <object>
+      <modelId>ball</modelId>
+      <translation>+7.5 5.0 0.0</translation>
+      <materialId>red</materialId>
+    </object>    
+    <object>
+      <modelId>box</modelId>
+      <translation>-7.5 +7.5 0.0</translation>
+      <materialId>green</materialId>
+    </object>    
+  </scene>
+
+</image>
